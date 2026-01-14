@@ -5,155 +5,215 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moutahamil Khadija | Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2d3436;
-            --accent: #0984e3;
-            --bg: #f5f6fa;
-            --text: #2f3640;
+            --primary: #1a1a1a;
+            --accent: #007bff;
+            --bg: #fdfdfd;
+            --text: #333;
+            --light-grey: #f4f4f4;
         }
 
+        * { box-sizing: border-box; }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             background-color: var(--bg);
             color: var(--text);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .reveal { animation: fadeInUp 0.8s ease forwards; }
+
+        /* Header & Photo */
         header {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(135deg, #2d3436 0%, #000000 100%);
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
-        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
-        .hero p { font-size: 1.2rem; color: #dfe6e9; max-width: 600px; }
+        .profile-container {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid var(--accent);
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
 
-        .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
+        .profile-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
+        header h1 { font-size: 3rem; margin: 10px 0; letter-spacing: 2px; }
+        header p { font-size: 1.2rem; color: #ccc; max-width: 700px; }
+
+        .social-links { margin-top: 25px; }
+        .social-links a {
+            color: white;
+            font-size: 1.8rem;
+            margin: 0 15px;
+            transition: 0.3s;
+        }
+        .social-links a:hover { color: var(--accent); transform: scale(1.2); }
+
+        /* Sections */
+        .container { max-width: 1100px; margin: auto; padding: 60px 20px; }
+        
         .section-title {
             text-align: center;
-            border-bottom: 3px solid var(--accent);
-            display: inline-block;
-            margin-bottom: 30px;
+            font-size: 2rem;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+            margin: 10px auto;
         }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
 
         .card {
             background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: 0.4s;
+            border-bottom: 4px solid transparent;
         }
+        .card:hover { transform: translateY(-10px); border-bottom: 4px solid var(--accent); }
 
-        .social-links { margin-top: 20px; }
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            margin: 0 15px;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-        .social-links a:hover { color: var(--accent); }
+        .card h3 { color: var(--accent); margin-top: 0; }
 
+        /* CV Button & Footer */
         footer {
-            background: #2d3436;
+            background: var(--primary);
             color: white;
             text-align: center;
-            padding: 40px 0;
-            margin-top: 50px;
+            padding: 60px 20px;
+            margin-top: 80px;
         }
 
         .cv-button {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             background: var(--accent);
             color: white;
-            padding: 12px 25px;
-            border-radius: 30px;
+            padding: 15px 30px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            margin-top: 20px;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,123,255,0.3);
+        }
+        .cv-button:hover { background: #0056b3; transform: translateY(-3px); }
+
+        .tag {
+            display: inline-block;
+            background: var(--light-grey);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.85rem;
+            font-weight: 600;
         }
 
-        .language-tag {
-            display: inline-block;
-            background: #eee;
-            padding: 5px 12px;
-            border-radius: 15px;
-            margin: 5px;
-            font-size: 0.9rem;
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
 <body>
 
-    <header class="hero">
-        <h1>MOUTAHAMIL KHADIJA</h1>
-        <p>Marketing Digital | Stratégie Commerciale | Création de Contenu [cite: 2, 3]</p>
-        <div class="social-links">
+    <header>
+        <div class="profile-container reveal">
+            <img src="https://lh3.googleusercontent.com/d/1_Lqxo1NF1mU5SbPeXdiOlN8qCq8fDqoD" alt="Moutahamil Khadija">
+        </div>
+        <h1 class="reveal">MOUTAHAMIL KHADIJA</h1>
+        <p class="reveal">Marketing Digital | Stratégie Commerciale | Création de Contenu</p>
+        <div class="social-links reveal">
             <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
             <a href="https://www.kaggle.com/code/moutahmilkhadija/dataset-1" target="_blank"><i class="fab fa-kaggle"></i></a>
         </div>
     </header>
 
-    <div class="container">
-        <section style="text-align: center; margin-bottom: 60px;">
+    <main class="container">
+        <section class="reveal">
             <h2 class="section-title">À Propos</h2>
-            <p>[cite: 7] Future diplômée en Marketing Digital, je combine une approche analytique rigoureuse avec une sensibilité artistique affirmée.</p>
-            <p>[cite: 8, 9] Maîtrisant les fondamentaux de la relation client, j'aspire à concevoir des expériences de marque qui font sens, là où la créativité rencontre l'efficacité commerciale.</p>
+            <div style="text-align: center; max-width: 800px; margin: auto;">
+                <p>Future diplômée en Marketing Digital, je combine une approche analytique rigoureuse avec une sensibilité artistique affirmée[cite: 7].</p>
+                <p>Maîtrisant les fondamentaux de la relation client et de la data, j'aspire à concevoir des expériences de marque qui font sens[cite: 8, 9].</p>
+            </div>
         </section>
 
-        <div class="grid">
-            <div class="card">
+        <div class="grid" style="margin-top: 50px;">
+            <article class="card reveal">
                 <h3>Expérience Professionnelle</h3>
-                <p><strong>ORLIVRAISON</strong> (Juin - Juillet 2025) [cite: 19, 22, 23]</p>
+                <p><strong>ORLIVRAISON</strong> | Juin - Juillet 2025 [cite: 19, 22, 23]</p>
                 <ul>
-                    <li>[cite: 25] Prospection et identification de leviers de croissance.</li>
-                    <li>[cite: 26] Conception de supports marketing orientés conversion.</li>
-                    <li>[cite: 27] Audit de satisfaction et optimisation du parcours utilisateur.</li>
+                    <li>Prospection & Leviers de croissance[cite: 25].</li>
+                    <li>Conception de supports marketing visuels[cite: 26].</li>
+                    <li>Audit de satisfaction client & UX[cite: 27].</li>
                 </ul>
-            </div>
+            </article>
 
-            <div class="card">
-                <h3>Formation</h3>
-                <p><strong>EST - DUT Marketing Digital</strong> [cite: 11, 12]<br>2025 - 2026 [cite: 15]</p>
-                <p><strong>Baccalauréat Sciences Économiques</strong> [cite: 16]<br>2024 [cite: 17]</p>
-            </div>
+            <article class="card reveal">
+                <h3>Parcours Académique</h3>
+                <p><strong>DUT Marketing Digital & Commercial</strong><br>EST | 2025 - 2026 [cite: 11, 12, 15]</p>
+                <hr>
+                <p><strong>Baccalauréat Sciences Économiques</strong><br>2024 [cite: 16, 17]</p>
+            </article>
         </div>
 
-        <section style="margin-top: 50px;">
-            <h2 class="section-title">Compétences & Univers</h2>
+        <section style="margin-top: 80px;" class="reveal">
+            <h2 class="section-title">Compétences & Intérêts</h2>
             <div class="grid">
                 <div class="card">
-                    <h4>Langues</h4>
-                    <span class="language-tag">Arabe: Maternelle [cite: 29]</span>
-                    <span class="language-tag">Anglais: Avancé [cite: 30]</span>
-                    <span class="language-tag">Français: Intermédiaire [cite: 31]</span>
+                    <h4>Langues [cite: 28]</h4>
+                    <span class="tag">Arabe: Maternelle [cite: 29]</span>
+                    <span class="tag">Anglais: Avancé [cite: 30]</span>
+                    <span class="tag">Français: Intermédiaire [cite: 31]</span>
                 </div>
                 <div class="card">
-                    <h4>Centres d'intérêt</h4>
-                    <p>[cite: 33, 34, 35] Photographie, Journaling, Design et Veille Marketing (Psychologie du consommateur).</p>
+                    <h4>Univers Créatif [cite: 32]</h4>
+                    <p>Photographie, Journaling, Design et Veille Marketing[cite: 33, 34, 35].</p>
                 </div>
             </div>
         </section>
-    </div>
+    </main>
 
     <footer>
-        <p>Contact: mmoutahmilkhadija@gmail.com | Salé, Maroc [cite: 4, 3]</p>
-        <a href="YOUR_OVERLEAF_READ_ONLY_LINK_HERE" class="cv-button" target="_blank">
-            <i class="fas fa-file-pdf"></i> Mon CV sur Overleaf
+        <p>mmoutahmilkhadija@gmail.com | Salé, Maroc [cite: 3, 4]</p>
+        <a href="Khadija_Moutahamil (1).pdf" class="cv-button" target="_blank">
+            <i class="fas fa-file-pdf"></i> Télécharger mon CV (PDF)
         </a>
-        <div style="margin-top: 20px;">
-            <i class="fas fa-code"></i> Créé avec passion par Khadija
+        <div style="margin-top: 30px; font-size: 0.8rem; opacity: 0.6;">
+            <i class="fas fa-heart"></i> Créé avec passion par Khadija
         </div>
     </footer>
 
