@@ -3,207 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Moutahamil Khadija</title>
+    <title>Moutahamil Khadija | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --accent-color: #3498db;
-            --text-color: #333;
-            --light-bg: #f4f7f6;
+            --primary: #2d3436;
+            --accent: #0984e3;
+            --bg: #f5f6fa;
+            --text: #2f3640;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: #fff;
             margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 40px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
         }
 
         header {
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
-
-        h1 {
-            margin: 0;
-            color: var(--primary-color);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .subtitle {
-            font-size: 1.2em;
-            color: var(--accent-color);
-            font-weight: bold;
-        }
-
-        .contact-info {
-            margin-top: 10px;
-            font-size: 0.9em;
-        }
-
-        .contact-info span {
-            margin-right: 15px;
-        }
-
-        section {
-            margin-bottom: 30px;
-        }
-
-        h2 {
-            background-color: var(--light-bg);
-            padding: 10px;
-            border-left: 5px solid var(--accent-color);
-            font-size: 1.3em;
-            color: var(--primary-color);
-            text-transform: uppercase;
-        }
-
-        .profile-summary {
-            font-style: italic;
-            color: #555;
-        }
-
-        .item {
-            margin-bottom: 20px;
-        }
-
-        .item-header {
+            height: 100vh;
             display: flex;
-            justify-content: space-between;
-            font-weight: bold;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #2d3436 0%, #000000 100%);
+            color: white;
+            padding: 20px;
         }
 
-        .location-date {
-            color: #777;
-            font-size: 0.9em;
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; color: #dfe6e9; max-width: 600px; }
+
+        .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
+
+        .section-title {
+            text-align: center;
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+            margin-bottom: 30px;
         }
 
-        ul {
-            list-style-type: square;
-            padding-left: 20px;
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+        .social-links { margin-top: 20px; }
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: 0.3s;
         }
-
-        .skills-list, .interests-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .skills-list li {
-            margin-bottom: 8px;
-            padding: 5px 0;
-            border-bottom: 1px solid #eee;
-        }
+        .social-links a:hover { color: var(--accent); }
 
         footer {
+            background: #2d3436;
+            color: white;
             text-align: center;
-            font-size: 0.8em;
-            color: #aaa;
-            margin-top: 40px;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+        .cv-button {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .language-tag {
+            display: inline-block;
+            background: #eee;
+            padding: 5px 12px;
+            border-radius: 15px;
+            margin: 5px;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
+    <header class="hero">
+        <h1>MOUTAHAMIL KHADIJA</h1>
+        <p>Marketing Digital | Stratégie Commerciale | Création de Contenu [cite: 2, 3]</p>
+        <div class="social-links">
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.kaggle.com/code/moutahmilkhadija/dataset-1" target="_blank"><i class="fab fa-kaggle"></i></a>
+        </div>
+    </header>
+
     <div class="container">
-        <header>
-            [cite_start]<h1>MOUTAHAMIL KHADIJA [cite: 2]</h1>
-            <div class="subtitle">Marketing Digital | Stratégie Commerciale | [cite_start]Création de Contenu [cite: 3]</div>
-            <div class="contact-info">
-                <span>📍 Salé, Maroc</span>
-                [cite_start]<span>📞 +212 720 909 638 [cite: 3]</span>
-                [cite_start]<span>📧 <a href="mailto:mmoutahmilkhadija@gmail.com">mmoutahmilkhadija@gmail.com</a> [cite: 4]</span>
-                <br>
-                [cite_start]<span>🔗 <a href="#">LinkedIn</a> [cite: 5]</span>
-                [cite_start]<span>💻 <a href="#">GitHub</a> [cite: 6]</span>
-            </div>
-        </header>
-
-        <section>
-            [cite_start]<h2>Profil [cite: 1]</h2>
-            <p class="profile-summary">
-                [cite_start]Future diplômée en Marketing Digital, je combine une approche analytique rigoureuse avec une sensibilité artistique affirmée[cite: 7]. 
-                [cite_start]Maîtrisant les fondamentaux de la relation client et de la data, j'aspire à concevoir des expériences de marque qui font sens[cite: 8]. 
-                [cite_start]Curieuse de nature et animée par le goût du défi, je m'investis pleinement dans des projets où la créativité visuelle rencontre l'efficacité commerciale[cite: 9].
-            </p>
-        </section>
-
-        <section>
-            [cite_start]<h2>Parcours Académique [cite: 10]</h2>
-            <div class="item">
-                <div class="item-header">
-                    [cite_start]<span>École Supérieure de Technologie (EST) [cite: 11]</span>
-                    [cite_start]<span class="location-date">2025 - 2026 [cite: 15]</span>
-                </div>
-                [cite_start]<div>DUT en Marketing Digital et Commercial [cite: 12]</div>
-                [cite_start]<div class="location-date">Salé, Maroc [cite: 14]</div>
-            </div>
-            <div class="item">
-                <div class="item-header">
-                    [cite_start]<span>Lycée Abass Miftah [cite: 13]</span>
-                    [cite_start]<span class="location-date">2024 [cite: 17]</span>
-                </div>
-                [cite_start]<div>Bacalaureat Sciences économiques [cite: 16]</div>
-                [cite_start]<div class="location-date">Salé, Maroc [cite: 17]</div>
-            </div>
-        </section>
-
-        <section>
-            [cite_start]<h2>Expériences Professionnelles [cite: 18]</h2>
-            <div class="item">
-                <div class="item-header">
-                    [cite_start]<span>ORLIVRAISON - Immersion en Marketing Digital [cite: 19, 21]</span>
-                    [cite_start]<span class="location-date">Juin 2025 - Juillet 2025 [cite: 22, 23]</span>
-                </div>
-                [cite_start]<div class="location-date">Salé, Maroc [cite: 20]</div>
-                <ul>
-                    [cite_start]<li><strong>Prospection:</strong> Identification de nouveaux leviers de croissance et soutien au développement commercial[cite: 25].</li>
-                    [cite_start]<li><strong>Visuel:</strong> Conception de supports marketing orientés vers la conversion et l'engagement client[cite: 26].</li>
-                    [cite_start]<li><strong>Analyse:</strong> Audit de la satisfaction client et proposition de solutions pour fluidifier le parcours utilisateur[cite: 27].</li>
-                </ul>
-            </div>
+        <section style="text-align: center; margin-bottom: 60px;">
+            <h2 class="section-title">À Propos</h2>
+            <p>[cite: 7] Future diplômée en Marketing Digital, je combine une approche analytique rigoureuse avec une sensibilité artistique affirmée.</p>
+            <p>[cite: 8, 9] Maîtrisant les fondamentaux de la relation client, j'aspire à concevoir des expériences de marque qui font sens, là où la créativité rencontre l'efficacité commerciale.</p>
         </section>
 
         <div class="grid">
-            <section>
-                [cite_start]<h2>Compétences Linguistiques [cite: 28]</h2>
-                <ul class="skills-list">
-                    [cite_start]<li><strong>Arabe:</strong> Langue maternelle (Excellente maîtrise rédactionnelle)[cite: 29].</li>
-                    [cite_start]<li><strong>Anglais:</strong> Niveau Avancé (Capacité à évoluer dans un environnement international)[cite: 30].</li>
-                    [cite_start]<li><strong>Français:</strong> Niveau Intermédiaire (Usage professionnel et courant)[cite: 31].</li>
+            <div class="card">
+                <h3>Expérience Professionnelle</h3>
+                <p><strong>ORLIVRAISON</strong> (Juin - Juillet 2025) [cite: 19, 22, 23]</p>
+                <ul>
+                    <li>[cite: 25] Prospection et identification de leviers de croissance.</li>
+                    <li>[cite: 26] Conception de supports marketing orientés conversion.</li>
+                    <li>[cite: 27] Audit de satisfaction et optimisation du parcours utilisateur.</li>
                 </ul>
-            </section>
+            </div>
 
-            <section>
-                [cite_start]<h2>Univers Créatif & Intérêts [cite: 32]</h2>
-                <ul class="interests-list">
-                    [cite_start]<li>📸 <strong>Photographie:</strong> Exploration de l'esthétique visuelle et narration par l'image[cite: 33].</li>
-                    [cite_start]<li>🎨 <strong>Journaling & Design:</strong> Organisation créative et pratique régulière du dessin[cite: 34].</li>
-                    [cite_start]<li>📈 <strong>Veille Marketing:</strong> Psychologie du consommateur et nouvelles tendances digitales[cite: 35].</li>
-                </ul>
-            </section>
+            <div class="card">
+                <h3>Formation</h3>
+                <p><strong>EST - DUT Marketing Digital</strong> [cite: 11, 12]<br>2025 - 2026 [cite: 15]</p>
+                <p><strong>Baccalauréat Sciences Économiques</strong> [cite: 16]<br>2024 [cite: 17]</p>
+            </div>
         </div>
 
-        <footer>
-            &copy; 2026 Khadija Moutahamil - Généré à partir du profil professionnel.
-        </footer>
+        <section style="margin-top: 50px;">
+            <h2 class="section-title">Compétences & Univers</h2>
+            <div class="grid">
+                <div class="card">
+                    <h4>Langues</h4>
+                    <span class="language-tag">Arabe: Maternelle [cite: 29]</span>
+                    <span class="language-tag">Anglais: Avancé [cite: 30]</span>
+                    <span class="language-tag">Français: Intermédiaire [cite: 31]</span>
+                </div>
+                <div class="card">
+                    <h4>Centres d'intérêt</h4>
+                    <p>[cite: 33, 34, 35] Photographie, Journaling, Design et Veille Marketing (Psychologie du consommateur).</p>
+                </div>
+            </div>
+        </section>
     </div>
+
+    <footer>
+        <p>Contact: mmoutahmilkhadija@gmail.com | Salé, Maroc [cite: 4, 3]</p>
+        <a href="YOUR_OVERLEAF_READ_ONLY_LINK_HERE" class="cv-button" target="_blank">
+            <i class="fas fa-file-pdf"></i> Mon CV sur Overleaf
+        </a>
+        <div style="margin-top: 20px;">
+            <i class="fas fa-code"></i> Créé avec passion par Khadija
+        </div>
+    </footer>
 
 </body>
 </html>
